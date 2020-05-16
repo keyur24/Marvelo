@@ -1,0 +1,160 @@
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-link {
+    font-size: 24pt;
+    color: pink;
+}
+
+.testimonial {
+    background-color: #bf358e;
+	color: #FFFFFF;
+}
+
+.testimonial-review{
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 23px 35px 40px;
+	position: relative;
+	text-align: left;
+}
+.testimonial-review:after{
+	content: "";
+	border-left: 12px solid transparent;
+	border-right: 12px solid transparent;
+	border-top: 12px solid #fff;
+	position: absolute;
+	top:100%;
+	text-align: center;
+	margin: 0 auto;
+	right: 0;
+	left: 0;
+	width: 0px;
+}
+
+.testimonial-review > p:before{
+	content: "\f10d";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	text-align: center;
+	margin: 0 auto;
+	right: 0;
+	left: 0;
+	display: block;
+	font-size: 60px;
+	color: black;
+	padding: 15px 0 50px 0;
+}
+
+.testimonial-review > p{
+	color:#777;
+	margin-bottom: 20px;
+	font-size: 16px;
+	line-height: 25px;
+}
+.pic{
+	margin-top: 30px;
+	text-align: center;
+}
+/* .pic img{
+	border-radius: 50%;
+} */
+
+.owl-prev {
+    left: -30px;
+}
+.owl-next {
+    right: -30px
+}
+
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 30%;
+}
+
+.owl-prev span, .owl-next span {
+    font-size: 60px;
+    color: #787878;
+}
+
+.owl-theme .owl-nav [class*="owl-"]:hover {
+    background-color: transparent;
+}
+
+
+.header {
+	text-align: center;
+	padding: 1.5em 0;
+}
+
+h3 {
+	font-size: 34pt;
+	color: #bf358e;
+	text-transform: uppercase;
+    text-align: center;
+}
+
+h3::after {
+	content: '';
+	display: block;
+	position: relative;
+	width: 20%;
+	border-top: #bf358e solid 2px;
+	text-align: center;
+	margin: 0 auto;
+	top: 0.2em;
+	bottom: 0.2em;
+}
+.testimonial h3::after {
+	content: '';
+	display: block;
+	position: relative;
+	width: 20%;
+	border-top: #ffffff solid 2px;
+	text-align: center;
+	margin: 0 auto;
+	top: 0.2em;
+	bottom: 0.2em;
+}
+
+h4, h5 {
+    display: inline-block;
+}
+
+h4::after {
+	content: '';
+	display: block;
+	position: relative;
+	border-top: #ffffff solid 2px;
+	top: 0.2em;
+}
+
+.fa-envelope, fa-phone {
+    color: pink;
+}
+
+.border-bottom-10 {
+    border-bottom-width:5px !important;
+}
+
+.bg-pink {
+    background-color: #bf358e !important;
+}
+
+.color-pink, .navbar-nav .active {
+    color: #bf358e !important; 
+}
+
+h4.color-pink::after, h5.color-pink::after {
+	content: '';
+	display: block;
+	position: relative;
+	border-top: #bf358e solid 2px;
+	top: 0.2em;
+}
+
+.border-pink {
+    border-color: #bf358e!important;
+}
