@@ -158,3 +158,8 @@ h4.color-pink::after, h5.color-pink::after {
 .border-pink {
     border-color: #bf358e!important;
 }
+
+.brand-philosophy {
+	background: url('../images/about_us_background.png') no-repeat;
+  	background-size: cover;
+}
