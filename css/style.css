@@ -28,6 +28,29 @@
     /* .img-logo {
         width: 220px;
     } */
+    .border-grey {
+        border: 1px solid rgb(200, 200, 200);
+    }
+    .border-grey-bottom-half {
+        border: 1px solid;
+        border-image-source: linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
+        border-image-slice: 1;
+    }
+    .border-grey-left-half {
+        border: 1px solid;
+        border-image-source: linear-gradient(90deg, rgb(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
+        border-image-slice: 1;
+    }
+    .border-grey-right-half {
+        border: 1px solid;
+        border-image-source: linear-gradient(270deg, rgb(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
+        border-image-slice: 1;
+    }
+    .border-grey-top-half {
+        border: 1px solid;
+        border-image-source: linear-gradient(0deg, rgb(255, 255, 255) 0%, rgb(200, 200, 200) 100%);
+        border-image-slice: 1;
+    }
     .border-grey-45 {
         border: 1px solid;
         border-image-source: linear-gradient(45deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
@@ -138,53 +161,7 @@
     .close {
         font-size: calc(1.275rem + 0.3vw);
     }
-    /* .border-grey-45 {
-        border: 1px solid;
-        border-image-source: linear-gradient(45deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-        border-image-slice: 1;
-    }
-    .border-grey-135 {
-        border: 1px solid;
-        border-image-source: linear-gradient(135deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-        border-image-slice: 1;
-    }
-    .border-grey-225 {
-        border: 1px solid;
-        border-image-source: linear-gradient(225deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-        border-image-slice: 1;
-    }
-    .border-grey-315 {
-        border: 1px solid;
-        border-image-source: linear-gradient(315deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-        border-image-slice: 1;
-    } */
 }
-
-
-/* .border-grey-45 {
-    border: 1px solid;
-    border-image-source: linear-gradient(45deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
-}
-
-.border-grey-135 {
-    border: 1px solid;
-    border-image-source: linear-gradient(135deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
-    border-right-style: none;
-}
-
-.border-grey-225 {
-    border: 1px solid;
-    border-image-source: linear-gradient(225deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
-}
-
-.border-grey-315 {
-    border: 1px solid;
-    border-image-source: linear-gradient(315deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
-} */
 
 @font-face {
     font-family: HelveticaThin;
@@ -325,7 +302,8 @@ h3.footer::after {
 .footer h3,
 h4,
 h5,
-h3.footer {
+h3.footer,
+.contact-us-address h3 {
     display: inline-block;
 }
 
@@ -378,7 +356,8 @@ h5.color-pink::after {
     background-size: 100% 100%;
 }
 
-p>legend {
+p>legend,
+address {
     font-family: HelveticaThin !important;
 }
 
@@ -603,28 +582,73 @@ input.subscribe::placeholder {
     bottom: 0.2em;
 }
 
-
-/* .border-grey-45 {
-    border: 1px solid;
-    border-image-source: linear-gradient(45deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
+.contact-us input,
+.contact-us textarea {
+    background: #000000;
+    border: 1px solid white;
+    padding: 0.5em;
+    outline: none;
+    color: white !important;
 }
 
-.border-grey-135 {
-    border: 1px solid;
-    border-image-source: linear-gradient(135deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
-    border-right-style: none;
+.contact-us input::placeholder,
+.contact-us textarea::placeholder {
+    color: white;
+    opacity: 0.5;
 }
 
-.border-grey-225 {
-    border: 1px solid;
-    border-image-source: linear-gradient(225deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
+.form-control:focus {
+    background-color: black;
+    border-color: white;
 }
 
-.border-grey-315 {
-    border: 1px solid;
-    border-image-source: linear-gradient(315deg, rgb(255, 255, 255) 70%, rgb(200, 200, 200) 100%);
-    border-image-slice: 1;
+.contact-us-address h3::after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 100%;
+    border-top: #ffffff solid 2px;
+    margin: 0;
+    top: 0.2em;
+    bottom: 0.2em;
+}
+
+
+/* .circle-map {
+    width: 320px;
+    height: 320px;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    position: relative;
 } */
+
+.iframe-outer {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    margin-left: 25%;
+}
+
+.iframe-outer:after {
+    content: '';
+    display: block;
+    margin-top: 100%;
+}
+
+.iframe-inner {
+    overflow: hidden;
+    border-radius: 5000px;
+    transition: all ease .2s;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.iframe-inner iframe {
+    height: 120%;
+    width: 120%;
+}
