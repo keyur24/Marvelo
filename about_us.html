@@ -134,31 +134,28 @@
                 <div class="col-12 text-center">
                     <h3 class="py-4">TESTIMONIALS</h3>
                 </div>
-                <div class="col-12">
-                    <div class="mp-carousel">
-                        <div class="mp-carousel-img">
-                            <span>
-                                <video playsinline controls controlsList="nodownload nofullscreen noremoteplayback" src="video/videoplayback.mp4" poster="images/Banner.png" style="width: 400px;"></video>
-                            </span>
+                <div class="col-11 mx-auto">
+                    <div class="testimonial-video-slider">
+                        <div style="position: relative !important;">
+                            <video playsinline style="width: 100%; height: auto;" class="video">
+                                <source src="video/home_page_3.mp4" type="video/mp4"/>
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="playpause"></div>
                         </div>
-                        <div class="mp-carousel-img">
-                            <span>
-                                    <video playsinline controls src="video/videoplayback.mp4" poster="images/Banner.png" style="width: 100%; height: auto;"></video>
-                            </span>
+                        <div style="position: relative !important;">
+                            <video playsinline style="width: 100%; height: auto;" class="video">
+                                <source src="video/home_page_3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="playpause"></div>
                         </div>
-                        <div class="mp-carousel-img">
-                            <span>
-
-                                    <video playsinline controls src="video/videoplayback.mp4" poster="images/Banner.png" style="width: 100%; height: auto;"></video>
-
-                            </span>
-                        </div>
-                        <div class="mp-carousel-img">
-                            <span>
-
-                                    <video playsinline controls src="video/videoplayback.mp4" poster="images/Banner.png"style="width: 100%; height: auto;" ></video>
-
-                            </span>
+                        <div style="position: relative !important;">
+                            <video playsinline style="width: 100%; height: auto;" class="video">
+                                <source src="video/home_page_3.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="playpause"></div>
                         </div>
                     </div>
                 </div>
@@ -169,54 +166,22 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/slick/slick.js"></script>
     <script>
-        $('.mp-carousel')
-            .on('init', () => {
-                $('.slick-slide[data-slick-index="-2"]').addClass('lt2');
-                $('.slick-slide[data-slick-index="-1"]').addClass('lt1');
-                $('.slick-slide[data-slick-index="1"]').addClass('gt1');
-                $('.slick-slide[data-slick-index="2"]').addClass('gt2');
-            })
-            .slick({
-                centerMode: true,
-                centerPadding: 0,
-                slidesToShow: 3,
-                dots: false,
-                arrows: false,
-                focusOnSelect: false,
-            }).on('beforeChange', (event, slick, current, next) => {
-                $('.slick-slide.gt2').removeClass('gt2');
-                $('.slick-slide.gt1').removeClass('gt1');
-                $('.slick-slide.lt1').removeClass('lt1');
-                $('.slick-slide.lt2').removeClass('lt2');
-
-                const lt2 = (current < next && current > 0) ? current - 1 : next - 2;
-                const lt1 = (current < next && current > 0) ? current : next - 1;
-                const gt1 = (current < next || next === 0) ? next + 1 : current;
-                const gt2 = (current < next || next === 0) ? next + 2 : current + 1;
-
-                $(`.slick-slide[data-slick-index="${lt2}"]`).addClass('lt2');
-                $(`.slick-slide[data-slick-index="${lt1}"]`).addClass('lt1');
-                $(`.slick-slide[data-slick-index="${gt1}"]`).addClass('gt1');
-                $(`.slick-slide[data-slick-index="${gt2}"]`).addClass('gt2');
-
-                // Clone processing when moving from 5 to 0
-                if (current === 5 && next === 0) {
-                    $(`.slick-slide[data-slick-index="${current - 1}"]`).addClass('lt2');
-                    $(`.slick-slide[data-slick-index="${current}"]`).addClass('lt1');
-                    $(`.slick-slide[data-slick-index="${current + 2}"]`).addClass('gt1');
-                    $(`.slick-slide[data-slick-index="${current + 3}"]`).addClass('gt2');
-                }
-
-                // Clone processing when moving from 0 to 5
-                if (current === 0 && next === 5) {
-                    $(`.slick-slide[data-slick-index="${current - 1}"]`).addClass('gt2');
-                    $(`.slick-slide[data-slick-index="${current}"]`).addClass('gt1');
-                    $(`.slick-slide[data-slick-index="${current - 2}"]`).addClass('lt1');
-                    $(`.slick-slide[data-slick-index="${current - 3}"]`).addClass('lt2');
-                }
-
-                console.log('beforeChange', current, ':', lt2, lt1, next, gt1, gt2);
-            });
+        $('.testimonial-video-slider').slick({
+            autoplay: false,
+            arrows: true,
+            autoplaySpeed: 2000,
+            dots: false,
+            infinite: true,
+        });
+        $('.video').parent().click(function() {
+            if ($(this).children(".video").get(0).paused) {
+                $(this).children(".video").get(0).play();
+                $(this).children(".playpause").fadeOut();
+            } else {
+                $(this).children(".video").get(0).pause();
+                $(this).children(".playpause").fadeIn();
+            }
+        });
     </script>
 </body>
 
